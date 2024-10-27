@@ -1,0 +1,7 @@
+v. 0.6.1
+
+-removed stun, changed to invulnerability instead
+
+v. 0.6.2
+
+-added altar, players now have to compete to complete the altar first
