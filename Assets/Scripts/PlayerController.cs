@@ -43,18 +43,38 @@ public class PlayerController : MonoBehaviour
     public GameObject holdable = null;
 
     private Rigidbody2D rb;
+    private Animator anim;
     private Vector3 velocity = new Vector3(0f, 0f, 0f);
 
     private GameObject spriteObject;
+    private GameObject particleEffect;
+    private Transform playerPivot;
     
     private GameManager gameManager;
     private SoundManager soundManager;
+
+    private Direction currentDirection = Direction.East;
+    private Direction nextDirection = Direction.East;
+
+    enum Direction 
+    {
+        NorthWest = 1,
+        North = 2,
+        NorthEast = 3,
+        East = 4,
+        SouthEast = 5,
+        South = 6,
+        SouthWest = 7,
+        West= 8
+    }
 
 	// Use this for initialization
 	void Start ()
     {
         gameManager = FindObjectOfType<GameManager>();
         soundManager = FindObjectOfType<SoundManager>();
+        anim = GetComponent<Animator>();
+        playerPivot = this.gameObject.transform.GetChild(1);
 
         rb = GetComponent<Rigidbody2D>();
         spriteObject = spriteRenderer.gameObject;
@@ -76,14 +96,19 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown(useButton))
             {
                 //ToggleHold();
-                CheckIfBuildObj();
+                //CheckIfBuildObj();
             }
 
             else if (Input.GetButtonDown(throwButton))
             {
                 //Throw();
-                CheckIfBuildObj();
+                //CheckIfBuildObj();
             }
+        }
+
+        if (child != null)
+        {
+            child.transform.position = holdPosition.transform.position;
         }
             
         //holdable = null;
@@ -91,14 +116,27 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        var value = context.ReadValue<Vector2>();
-        //print(value.normalized);
+        var moveDir = context.ReadValue<Vector2>();
 
-        velocity.x = value.x * speed * Time.deltaTime;
-        velocity.y = value.y * speed * Time.deltaTime;
+        velocity.x = moveDir.x * speed * Time.deltaTime;
+        velocity.y = moveDir.y * speed * Time.deltaTime;
         rb.velocity = velocity;
 
-        UpdateSprite(value.x, value.y);
+        UpdateSprite(moveDir.x, moveDir.y);
+        UpdateRotation(moveDir.x, moveDir.y);
+    }
+
+    void UpdateRotation(float dx, float dy)
+    {
+        if (velocity.sqrMagnitude > 0f)
+        {
+            playerPivot.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(dy, dx) * Mathf.Rad2Deg);
+
+            playerPivot.transform.position = transform.position;
+
+            //transform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(dy, dx) * Mathf.Rad2Deg);
+        }    
+            
     }
 
     /*void HandleMovement()
@@ -115,9 +153,60 @@ public class PlayerController : MonoBehaviour
         velocity.y = dy * speed * Time.deltaTime;
         rb.velocity = velocity;
 
-        if (velocity.sqrMagnitude > 0f)
-            transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(dy, dx) * Mathf.Rad2Deg);
+        
     }*/
+
+    /*void UpdateSprite(float dx, float dy)
+    {
+        float angle = Mathf.Atan2(dy, dx);
+        Direction cardinal = ToDirection(angle);
+
+        print(cardinal);
+
+        anim.SetInteger("Direction", (int)cardinal);
+        anim.SetTrigger("DirectionChanged");
+
+    }*/
+
+    //// Converts an angle in radians between [-π, π] to 1 of 8 cardinal
+    // directions. The direction choses - Rowan's code
+    private Direction ToDirection(float angle)
+    {
+        Direction direction = Direction.East;
+        if (angle > -Mathf.PI / 8 && angle <= Mathf.PI / 8)
+        {
+            direction = Direction.East;
+        }
+        else if (angle > Mathf.PI / 8 && angle <= (3 * Mathf.PI) / 8)
+        {
+            direction = Direction.NorthEast;
+        }
+        else if (angle > (3 * Mathf.PI) / 8 && angle <= (5 * Mathf.PI) / 8)
+        {
+            direction = Direction.North;
+        }
+        else if (angle > (5 * Mathf.PI) / 8 && angle <= (7 * Mathf.PI) / 8)
+        {
+            direction = Direction.NorthWest;
+        }
+        else if (angle > (7 * Mathf.PI) / 8 || angle <= (-7 * Mathf.PI) / 8)
+        {
+            direction = Direction.West;
+        }
+        else if (angle > (-7 * Mathf.PI) / 8 && angle <= (-5 * Mathf.PI) / 8)
+        {
+            direction = Direction.SouthWest;
+        }
+        else if (angle > (-5 * Mathf.PI) / 8 && angle <= (-3 * Mathf.PI) / 8)
+        {
+            direction = Direction.South;
+        }
+        else if (angle > (-3 * Mathf.PI) / 8 && angle <= -Mathf.PI / 8)
+        {
+            direction = Direction.SouthEast;
+        }
+        return direction;
+    }
 
     void UpdateSprite(float dx, float dy)
     {
@@ -176,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
     public void Drop()
     {
-        levitateParticle.SetActive(false);
+        Destroy(particleEffect);
         child.transform.parent = null;
         child.GetComponent<Rigidbody2D>().isKinematic = false;
         child.layer = GetLayerNumber(boxLayer.value);
@@ -185,38 +274,43 @@ public class PlayerController : MonoBehaviour
 
     void Pickup()
     {
-        levitateParticle.SetActive(true);
+        //levitateParticle.SetActive(true);
         child = holdable;
+        particleEffect = Instantiate(levitateParticle, child.transform);
+        particleEffect.transform.position = child.transform.position + new Vector3(0, -0.5f, 0);
         Debug.Log("Child has been assigned");
-        child.transform.parent = gameObject.transform;
+        //child.transform.parent = playerPivot;
         child.transform.position = holdPosition.transform.position;
         Rigidbody2D temp = child.GetComponent<Rigidbody2D>();
         temp.velocity = Vector3.zero;
         temp.isKinematic = true;
         child.layer = GetLayerNumber(heldLayer.value);
+        CheckIfBuildObj();
     }
 
     public void Throw(InputAction.CallbackContext context)
     {
         if (context.performed && child != null)
         {
+            CheckIfBuildObj();
             GameObject temp = child;
             Drop();
-            float theta = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
+            float theta = playerPivot.rotation.eulerAngles.z * Mathf.Deg2Rad;
             Vector3 dir = new Vector3(Mathf.Cos(theta), Mathf.Sin(theta));
+            Debug.Log(dir);
             temp.GetComponent<Rigidbody2D>().velocity = dir * throwForce;
         }
     }
 
-    void CheckIfBuildObj()
+    bool CheckIfBuildObj()
     {
-        holdingBuildObj = false;
-
         if (child != null)
         {
             if (child.gameObject.tag == "Altar Piece" || child.gameObject.tag == "Bucket" || child.gameObject.tag == "Candle")
-                holdingBuildObj = true;
+               return holdingBuildObj = true;
         }
+
+        return holdingBuildObj = false;
     }
 
     static int GetLayerNumber(int layer)
@@ -236,7 +330,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.tag == "Bucket" || other.gameObject.tag == "Candle" || other.gameObject.tag == "Bomb")
         {
             holdable = other.gameObject;
-            Debug.Log("Holdable = " + other.gameObject.name);
+            //Debug.Log("Holdable = " + other.gameObject.name);
         }
                 
     }

@@ -153,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player1_forward
+      name: Player1_South
       rect:
         serializedVersion: 2
         x: 0
@@ -174,7 +174,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_frontquarter1
+      name: Player1_SouthEast
       rect:
         serializedVersion: 2
         x: 32
@@ -195,7 +195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_frontside1
+      name: Player1_East
       rect:
         serializedVersion: 2
         x: 64
@@ -237,7 +237,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_backquarter1
+      name: Player1_NorthWest
       rect:
         serializedVersion: 2
         x: 128
@@ -258,7 +258,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_back
+      name: Player1_North
       rect:
         serializedVersion: 2
         x: 160
@@ -279,7 +279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_backquarter2
+      name: Player1_NorthWes
       rect:
         serializedVersion: 2
         x: 192
@@ -321,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_frontside2
+      name: Player1_West
       rect:
         serializedVersion: 2
         x: 0
@@ -342,7 +342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_frontquarter2
+      name: Player1_SouthWest
       rect:
         serializedVersion: 2
         x: 32
@@ -365,7 +365,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a2837daf1186e5a48ad2bc2758ba7b2a
     internalID: 0
     vertices: []
     indices: 
@@ -373,16 +373,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player1_back: 21300010
-      Player1_backquarter1: 21300008
-      Player1_backquarter2: 21300012
+      Player1_East: 21300004
+      Player1_North: 21300010
+      Player1_NorthWes: 21300012
+      Player1_NorthWest: 21300008
+      Player1_South: 21300000
+      Player1_SouthEast: 21300002
+      Player1_SouthWest: 21300018
+      Player1_West: 21300016
       Player1_backside1: 21300006
       Player1_backside2: 21300014
-      Player1_forward: 21300000
-      Player1_frontquarter1: 21300002
-      Player1_frontquarter2: 21300018
-      Player1_frontside1: 21300004
-      Player1_frontside2: 21300016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

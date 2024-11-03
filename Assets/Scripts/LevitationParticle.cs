@@ -11,16 +11,16 @@ public class LevitationParticle : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        pc = owner.GetComponent<PlayerController>();
-        gameObject.SetActive(false);
+        //pc = owner.GetComponent<PlayerController>();
+        //gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (pc.child != null)
+        /*if (pc.child != null)
             transform.position = new Vector3 (pc.child.transform.position.x, pc.child.transform.position.y - 0.5f, 
-                pc.child.transform.position.z);
+                pc.child.transform.position.z);*/
 
     }
 }

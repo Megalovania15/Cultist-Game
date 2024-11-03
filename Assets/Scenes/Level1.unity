@@ -7629,7 +7629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_RootOrder
@@ -11195,6 +11195,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1872554290482473029, guid: ab68733564c61484bacf6d597457bbd3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872554290482473029, guid: ab68733564c61484bacf6d597457bbd3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d799aa3e0f7537040b77307bd46eb198, type: 2}
     - target: {fileID: 3324783800599627673, guid: ab68733564c61484bacf6d597457bbd3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11259,7 +11269,8 @@ PrefabInstance:
         type: 3}
       propertyPath: levitateParticle
       value: 
-      objectReference: {fileID: 1644867303}
+      objectReference: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11958,12 +11969,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1009193029 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076,
-    type: 3}
-  m_PrefabInstance: {fileID: 1443041586}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018182405
 GameObject:
   m_ObjectHideFlags: 0
@@ -17249,21 +17254,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Levitation Particles P1
       objectReference: {fileID: 0}
+    - target: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.544684
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1967582
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18465,11 +18474,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1073166152}
-    - target: {fileID: 5801590276114179816, guid: b5726570a33f09a4cbb1540b33987a20,
-        type: 3}
-      propertyPath: levitateParticle
-      value: 
-      objectReference: {fileID: 1009193029}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

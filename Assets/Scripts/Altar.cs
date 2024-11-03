@@ -184,13 +184,14 @@ public class Altar : MonoBehaviour {
             if (currentBuildTime >= totalBuildTime)
             {
                 BuildAltar();
-
-                buildItem = null;
+                Destroy(buildItem);
+                //buildItem = null;
                 currentBuildTime = 0f;
                 buildProgressBar.SetActive(false);
                 playerDroppedObj = false;
                 particleSpawned = false;
                 startBuildTimer = false;
+                
             }
         }
 

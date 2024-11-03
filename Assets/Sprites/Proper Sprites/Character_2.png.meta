@@ -153,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player2_forward
+      name: Player2_South
       rect:
         serializedVersion: 2
         x: 0
@@ -174,7 +174,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_forwardquarter1
+      name: Player2_SouthEast
       rect:
         serializedVersion: 2
         x: 32
@@ -195,7 +195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_forwardside1
+      name: Player2_East
       rect:
         serializedVersion: 2
         x: 64
@@ -237,7 +237,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_backquarter1
+      name: Player2_NorthEast
       rect:
         serializedVersion: 2
         x: 128
@@ -258,7 +258,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_back
+      name: Player2_North
       rect:
         serializedVersion: 2
         x: 160
@@ -279,7 +279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_backquarter2
+      name: Player2_NorthWest
       rect:
         serializedVersion: 2
         x: 192
@@ -321,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_fowardside2
+      name: Player2_West
       rect:
         serializedVersion: 2
         x: 0
@@ -342,7 +342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2_forwardquarter2
+      name: Player2_SouthWest
       rect:
         serializedVersion: 2
         x: 32
@@ -365,7 +365,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ff45858116289b243962ac971a2c2894
     internalID: 0
     vertices: []
     indices: 
@@ -373,16 +373,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player2_back: 21300010
-      Player2_backquarter1: 21300008
-      Player2_backquarter2: 21300012
+      Player2_East: 21300004
+      Player2_North: 21300010
+      Player2_NorthEast: 21300008
+      Player2_NorthWest: 21300012
+      Player2_South: 21300000
+      Player2_SouthEast: 21300002
+      Player2_SouthWest: 21300018
+      Player2_West: 21300016
       Player2_backside1: 21300006
       Player2_backside2: 21300014
-      Player2_forward: 21300000
-      Player2_forwardquarter1: 21300002
-      Player2_forwardquarter2: 21300018
-      Player2_forwardside1: 21300004
-      Player2_fowardside2: 21300016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
