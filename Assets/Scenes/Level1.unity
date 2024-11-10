@@ -954,7 +954,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player2Respawn
       value: 
-      objectReference: {fileID: 1613311409}
+      objectReference: {fileID: 1915986631}
     - target: {fileID: 114251543715041774, guid: ed9d0b9038893284097761036a576205,
         type: 3}
       propertyPath: player1StartScreen
@@ -7767,127 +7767,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &691734421
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.047012463
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117251368191416, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 1816769026}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: bucketCount
-      value: 
-      objectReference: {fileID: 1425478744}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: candleCount
-      value: 
-      objectReference: {fileID: 1831982267}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: listOfItems
-      value: 
-      objectReference: {fileID: 1454158217}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: progressBar
-      value: 
-      objectReference: {fileID: 618823529}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: playerWonText
-      value: 
-      objectReference: {fileID: 585817489}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: playerWonBlurb
-      value: 
-      objectReference: {fileID: 211189246}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: totalBuildTime
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: altarPieceCount
-      value: 
-      objectReference: {fileID: 1578307037}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: requiredBuckets
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: requiredCandles
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: pressButtonsBlurb
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: progressPercentage
-      value: 
-      objectReference: {fileID: 286577965}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: requiredAltarPieces
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-        type: 3}
-      propertyPath: spiritedAwayParticle
-      value: 
-      objectReference: {fileID: 1508433854415764, guid: ed6d92d7fd550bf449cc8a49527783cd,
-        type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f5730738ef4e824e9652e019ab950f6, type: 3}
 --- !u!1 &699946693
 GameObject:
   m_ObjectHideFlags: 0
@@ -12145,9 +12024,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4865909192349526, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
+    - target: {fileID: 1113352140931162, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
+      propertyPath: m_Name
+      value: P1 Altar
       objectReference: {fileID: 0}
     - target: {fileID: 4865909192349526, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12177,6 +12056,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4865909192349526, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865909192349526, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865909192349526, guid: adce4542225a0f94a9d8129faec20c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
       propertyPath: owner
@@ -12199,11 +12090,6 @@ PrefabInstance:
       objectReference: {fileID: 365521156}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
-      propertyPath: progressBar
-      value: 
-      objectReference: {fileID: 29137219}
-    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
-        type: 3}
       propertyPath: playerWonText
       value: 
       objectReference: {fileID: 585817489}
@@ -12214,28 +12100,23 @@ PrefabInstance:
       objectReference: {fileID: 211189246}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
-      propertyPath: totalBuildTime
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
-        type: 3}
       propertyPath: altarPieceCount
       value: 
       objectReference: {fileID: 942447876}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
-      propertyPath: requiredBuckets
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
-        type: 3}
-      propertyPath: requiredCandles
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
-        type: 3}
-      propertyPath: pressButtonsBlurb
+      propertyPath: mainProgressBar
       value: 
+      objectReference: {fileID: 29137219}
+    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
+        type: 3}
+      propertyPath: numberOfBuckets
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
+        type: 3}
+      propertyPath: numberOfCandles
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
@@ -12244,15 +12125,9 @@ PrefabInstance:
       objectReference: {fileID: 153917556}
     - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
         type: 3}
-      propertyPath: requiredAltarPieces
-      value: 3
+      propertyPath: numberOfAltarPieces
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114938192153705152, guid: adce4542225a0f94a9d8129faec20c27,
-        type: 3}
-      propertyPath: spiritedAwayParticle
-      value: 
-      objectReference: {fileID: 1508433854415764, guid: ed6d92d7fd550bf449cc8a49527783cd,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18756,7 +18631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: altarP2
       value: 
-      objectReference: {fileID: 1688179889}
+      objectReference: {fileID: 0}
     - target: {fileID: 114933524226629310, guid: a1cd9aae3d0facc42aab59f4036dbe6c,
         type: 3}
       propertyPath: player1
@@ -20271,12 +20146,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1613311409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1387270999479100, guid: 7f5730738ef4e824e9652e019ab950f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 691734421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616151352
 GameObject:
   m_ObjectHideFlags: 0
@@ -21858,18 +21727,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1688179889 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114696030255172360, guid: 7f5730738ef4e824e9652e019ab950f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 691734421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829bff1bf5a742040ba81323ef2ca520, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1704044761
 GameObject:
   m_ObjectHideFlags: 0
@@ -25306,6 +25163,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1915986631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4510399620308767388, guid: b87654931a90d1a448ac1fe24c486044,
+    type: 3}
+  m_PrefabInstance: {fileID: 1986830744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1930240508
 GameObject:
   m_ObjectHideFlags: 0
@@ -26277,6 +26140,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1986830744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507832972449672634, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511963779014228662, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: m_Name
+      value: P2 Altar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 1816769026}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: bucketCount
+      value: 
+      objectReference: {fileID: 1425478744}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: candleCount
+      value: 
+      objectReference: {fileID: 1831982267}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: listOfItems
+      value: 
+      objectReference: {fileID: 1454158217}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: playerWonText
+      value: 
+      objectReference: {fileID: 585817489}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: playerWonBlurb
+      value: 
+      objectReference: {fileID: 211189246}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: altarPieceCount
+      value: 
+      objectReference: {fileID: 1578307037}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: mainProgressBar
+      value: 
+      objectReference: {fileID: 618823529}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: numberOfBuckets
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: numberOfCandles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: progressPercentage
+      value: 
+      objectReference: {fileID: 286577965}
+    - target: {fileID: 4541339393117306924, guid: b87654931a90d1a448ac1fe24c486044,
+        type: 3}
+      propertyPath: numberOfAltarPieces
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b87654931a90d1a448ac1fe24c486044, type: 3}
 --- !u!1 &2009479316
 GameObject:
   m_ObjectHideFlags: 0
@@ -27529,7 +27520,7 @@ SceneRoots:
   - {fileID: 969749837}
   - {fileID: 494485798}
   - {fileID: 1036657581}
-  - {fileID: 691734421}
+  - {fileID: 1986830744}
   - {fileID: 1506530559}
   - {fileID: 1186345385}
   - {fileID: 1376406677}

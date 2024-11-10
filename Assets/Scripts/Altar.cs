@@ -8,7 +8,7 @@ public class Altar : MonoBehaviour {
     public int requiredAltarPieces, requiredBuckets, requiredCandles;
 
     //progress items
-    public Slider progressBar;
+    public Slider mainProgressBar;
     public Text progressPercentage;
     public Sprite[] sprites;
 
@@ -19,11 +19,6 @@ public class Altar : MonoBehaviour {
     public bool startBuildTimer = false;
 
     public float totalBuildTime;
-
-    private float currentBuildTime = 0f;
-
-    private bool playerDroppedObj = false;
-    private bool particleSpawned = false;
 
     private RectTransform buildProgressBarFill;
 
@@ -71,31 +66,27 @@ public class Altar : MonoBehaviour {
 
         totalAltarPieces = requiredAltarPieces + requiredBuckets + requiredCandles;
 
-        progressBar.value = 0;
+        mainProgressBar.value = 0;
         
         buildProgressBarFill.localScale = new Vector3(0f, 1f, 1f);
 
         buildProgressBar.SetActive(false);
         playerWonBlurb.SetActive(false);
         listOfItems.SetActive(false);
+
+        UpdateProgressBar();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (buildItem != null)
-        {
-            if (canBuild && player.holdingBuildObj)
-                startBuildTimer = true;
-        }
+        Build();
         
-        StartBuild();
-        UpdateProgressBar();
         UpdateItemCount();
-        UpdateAltarSprite();
         EndGame();
 	}
 
+    //updates the main progress bar that shows the progress towards completion of the alter
     void UpdateProgressBar()
     {
         float currentCollectedPieces = currentAltarPieces + currentBuckets + currentCandles;
@@ -103,9 +94,12 @@ public class Altar : MonoBehaviour {
 
         progressPercentage.text = Mathf.RoundToInt(percentage).ToString() + "%";
 
-        progressBar.value = percentage;
+        mainProgressBar.value = percentage;
+
+        UpdateAltarSprite();
     }
 
+    //updates the number of items collected
     void UpdateItemCount()
     {
         numberOfAltarPieces = requiredAltarPieces - currentAltarPieces;
@@ -117,15 +111,20 @@ public class Altar : MonoBehaviour {
         candleCount.text = "x" + numberOfCandles.ToString();
     }
 
+    //updates the alter's sprite to show the progress towards completion
     void UpdateAltarSprite()
     {
+        Debug.Log("Sprite updated");
         int currentPercentage = (int)(percentage / 100 * 8);
+
+        Debug.Log(currentPercentage);
 
         currentSprite.sprite = sprites[currentPercentage];
         
     }
 
-    void BuildAltar()
+    //updates the counts of items... this can maybe happen somewhere else and a bit differently
+    void BuildAltarProgress()
     {
         if (buildItem.gameObject.tag == "Altar Piece")
         {
@@ -143,7 +142,7 @@ public class Altar : MonoBehaviour {
         }
     }
 
-    void StartBuild()
+    /*void StartBuild()
     {
         if (startBuildTimer)
         {
@@ -208,16 +207,62 @@ public class Altar : MonoBehaviour {
             buildItem = null;
 
         }
+    }*/
+
+    //forces the player to drop an item and shows a progress bar over the altar when we have an item it likes
+    void Build()
+    {
+        if (buildItem != null)
+        {
+            if (canBuild && player.holdingBuildObj)
+            {
+                player.Drop();
+                var buildItemPos = new Vector2(buildItem.transform.position.x, buildItem.transform.position.y);
+                Instantiate(spiritedAwayParticle, buildItemPos, Quaternion.Euler(-90f,0f,0f));
+                soundManager.PlaySound("Build Piece Disappears");
+                StartCoroutine(BuildBarProgress(totalBuildTime));
+                BuildAltarProgress();
+                Destroy(buildItem);
+            }
+        }
     }
 
+    //a coroutine to demonstrate that the altar is being built, can be adapted later for more cthulu things
+    IEnumerator BuildBarProgress(float currentBuildProgress)
+    {
+        float buildProgressTick = 1f;
+        float temp = 0;
+        buildProgressBar.SetActive(false);
+        Debug.Log(temp);
+
+        while (temp < currentBuildProgress)
+        {
+            Debug.Log("Build timer in progress");
+            buildProgressBar.SetActive(true);
+            temp += buildProgressTick;
+            Debug.Log(temp);
+            UpdateBuildBar(temp);
+            yield return new WaitForSecondsRealtime(buildProgressTick);
+            
+        }
+        UpdateProgressBar();
+        buildProgressBarFill.localScale = new Vector3(0f, 1f, 1f);
+        buildProgressBar.SetActive(false);
+        
+    }
+
+    //changes the scale of the progress bar directly above the altar when we build.
     void UpdateBuildBar(float buildProgress)
     {
-        buildProgressBarFill.localScale = new Vector3(Mathf.Clamp(buildProgress, 0f, 1f), buildProgressBarFill.localScale.y, buildProgressBarFill.localScale.z);
+        var buildProgressTime = buildProgress / totalBuildTime;
+
+        buildProgressBarFill.localScale = new Vector3(Mathf.Clamp(buildProgressTime, 0f, 1f), buildProgressBarFill.localScale.y, buildProgressBarFill.localScale.z);
     }
 
     void EndGame()
     {
-        if (currentAltarPieces == requiredAltarPieces && currentBuckets == requiredBuckets && currentCandles == requiredCandles)
+        if (currentAltarPieces == requiredAltarPieces && currentBuckets == requiredBuckets 
+            && currentCandles == requiredCandles)
         {
             playerWonBlurb.SetActive(true);
             playerWonBlurb.GetComponent<Menu>().SelectButton();
@@ -264,10 +309,6 @@ public class Altar : MonoBehaviour {
         if (other.gameObject.tag == "Player" && other.gameObject == owner)
         {
             listOfItems.SetActive(false);
-
-            canBuild = false;
-
-            //buildItem = null;
         }
 
         if (other.gameObject.tag == "Altar Piece" || other.gameObject.tag == "Candle" || other.gameObject.tag == "Bucket")

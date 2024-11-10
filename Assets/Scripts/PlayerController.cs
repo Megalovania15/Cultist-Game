@@ -265,11 +265,14 @@ public class PlayerController : MonoBehaviour
 
     public void Drop()
     {
-        Destroy(particleEffect);
-        child.transform.parent = null;
-        child.GetComponent<Rigidbody2D>().isKinematic = false;
-        child.layer = GetLayerNumber(boxLayer.value);
-        child = null;
+        if (child != null)
+        {
+            Destroy(particleEffect);
+            //child.transform.parent = null;
+            child.GetComponent<Rigidbody2D>().isKinematic = false;
+            child.layer = GetLayerNumber(boxLayer.value);
+            child = null;
+        }
     }
 
     void Pickup()

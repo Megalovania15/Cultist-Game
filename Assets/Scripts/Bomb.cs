@@ -13,6 +13,8 @@ public class Bomb : MonoBehaviour {
 
     public bool startTimer = false;
 
+    public bool IsCarried { get; set; }
+
     private bool soundPlayed = false;
 
     private float currentDetonateTime;
@@ -34,7 +36,7 @@ public class Bomb : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (transform.parent != null)
+        /*if (transform.parent != null)
             startTimer = true;
 
         if (startTimer)
@@ -57,7 +59,7 @@ public class Bomb : MonoBehaviour {
                 startTimer = false;
                 gameObject.SetActive(false);
             }
-        }
+        }*/
 	}
 
     void UpdateSprite(float percentage)
@@ -71,5 +73,38 @@ public class Bomb : MonoBehaviour {
     {
         soundManager.StopSound();
         Instantiate(explosion, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator DetonateBomb(float timeTillDetonate)
+    {
+        float detonationTick = 1f;
+        float temp = 0;
+
+        while (temp < timeTillDetonate)
+        {
+            temp += detonationTick;
+            float detonatePercentage = temp / timeTillDetonate;
+            UpdateSprite(detonatePercentage);
+            yield return new WaitForSecondsRealtime(detonationTick);
+        }
+
+        Detonate();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") &&
+            GameObject.ReferenceEquals(other.gameObject.GetComponent<PlayerController>().child,
+            gameObject))
+        {
+            Debug.Log("Bomb picked up");
+            StartCoroutine(DetonateBomb(timeTillDetonate));
+
+            if (!soundPlayed)
+            {
+                soundManager.PlaySound("IgniteBomb");
+                soundPlayed = true;
+            }
+        }
     }
 }

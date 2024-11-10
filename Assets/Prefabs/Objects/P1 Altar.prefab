@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113352140931162}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.47, y: 14.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829bff1bf5a742040ba81323ef2ca520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredAltarPieces: 1
-  requiredBuckets: 1
-  requiredCandles: 1
-  progressBar: {fileID: 0}
+  requiredAltarPieces: 3
+  requiredBuckets: 2
+  requiredCandles: 2
+  mainProgressBar: {fileID: 0}
   progressPercentage: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 21a14f59866b6dc4289b89c81963c53e, type: 3}
@@ -230,7 +230,8 @@ MonoBehaviour:
   - {fileID: 21300014, guid: 21a14f59866b6dc4289b89c81963c53e, type: 3}
   - {fileID: 21300016, guid: 21a14f59866b6dc4289b89c81963c53e, type: 3}
   buildProgressBar: {fileID: 1944110525224368}
-  spiritedAwayParticle: {fileID: 0}
+  spiritedAwayParticle: {fileID: 1508433854415764, guid: ed6d92d7fd550bf449cc8a49527783cd,
+    type: 3}
   startBuildTimer: 0
   totalBuildTime: 7
   listOfItems: {fileID: 0}
@@ -600,7 +601,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 30
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &114174727397469302
 MonoBehaviour:
   m_ObjectHideFlags: 0
