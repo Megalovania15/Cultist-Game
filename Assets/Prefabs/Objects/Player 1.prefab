@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4844717035191492}
   - component: {fileID: 61371218376577484}
+  - component: {fileID: 2444534699757540229}
   m_Layer: 14
   m_Name: Hold Obj Pos
   m_TagString: Untagged
@@ -161,6 +162,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.5733449}
   m_EdgeRadius: 0
+--- !u!114 &2444534699757540229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381533660189228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33e2d690e2049a448419e3f060e6905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1528509019526294
 GameObject:
   m_ObjectHideFlags: 0

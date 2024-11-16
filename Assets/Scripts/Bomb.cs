@@ -9,11 +9,13 @@ public class Bomb : MonoBehaviour {
     public Sprite[] sprites;
 
     public float explosionForce;
-    public float timeTillDetonate;
+
+    [field: SerializeField]
+    public float TimeTillDetonate { get; private set; }
 
     public bool startTimer = false;
 
-    public bool IsCarried { get; set; }
+    public bool IsDetonating { get; set; }
 
     private bool soundPlayed = false;
 
@@ -30,7 +32,7 @@ public class Bomb : MonoBehaviour {
         
         currentSprite = GetComponent<SpriteRenderer>();
 
-        currentDetonateTime = timeTillDetonate;
+        currentDetonateTime = TimeTillDetonate;
 	}
 	
 	// Update is called once per frame
@@ -64,41 +66,55 @@ public class Bomb : MonoBehaviour {
 
     void UpdateSprite(float percentage)
     {
-        int currentPercentage = (int)(percentage * 6);
+        int currentPercentage = (int)(percentage * 5);
 
         currentSprite.sprite = sprites[currentPercentage];
+
+        //Debug.Log("Bomb detonation percentage: " + currentPercentage);
     }
 
     public void Detonate()
     {
         soundManager.StopSound();
         Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
-    IEnumerator DetonateBomb(float timeTillDetonate)
+    public IEnumerator DetonateBomb()
     {
-        float detonationTick = 1f;
+        if (IsDetonating)
+        {
+            yield return null;
+        }
+
+        IsDetonating = true;
+        float detonationTick = 0.1f;
         float temp = 0;
 
-        while (temp < timeTillDetonate)
+        if (!soundPlayed)
+        {
+            Debug.Log("Bomb sound played");
+            soundManager.PlaySound("Ignite Bomb");
+            soundPlayed = true;
+        }
+
+        while (temp < TimeTillDetonate)
         {
             temp += detonationTick;
-            float detonatePercentage = temp / timeTillDetonate;
+            float detonatePercentage = temp / TimeTillDetonate;
             UpdateSprite(detonatePercentage);
-            yield return new WaitForSecondsRealtime(detonationTick);
+            yield return new WaitForSeconds(detonationTick);
         }
 
         Detonate();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") &&
-            GameObject.ReferenceEquals(other.gameObject.GetComponent<PlayerController>().child,
-            gameObject))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Bomb picked up");
-            StartCoroutine(DetonateBomb(timeTillDetonate));
+            StartCoroutine(DetonateBomb(TimeTillDetonate));
 
             if (!soundPlayed)
             {
@@ -106,5 +122,5 @@ public class Bomb : MonoBehaviour {
                 soundPlayed = true;
             }
         }
-    }
+    }*/
 }

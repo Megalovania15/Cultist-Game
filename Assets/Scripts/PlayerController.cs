@@ -83,14 +83,14 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown(startButton))
+        /*if (Input.GetButtonDown(startButton))
         {
             soundManager.PlaySound("Start Button");
             playerInitiated = true;
-        }
+        }*/
             
 
-        if (playerInitiated && !gameManager.endGame)
+        /*if (playerInitiated && !gameManager.endGame)
         {
             //HandleMovement();
             if (Input.GetButtonDown(useButton))
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 //Throw();
                 //CheckIfBuildObj();
             }
-        }
+        }*/
 
         if (child != null)
         {
@@ -289,6 +289,16 @@ public class PlayerController : MonoBehaviour
         temp.isKinematic = true;
         child.layer = GetLayerNumber(heldLayer.value);
         CheckIfBuildObj();
+
+        if (child.CompareTag("Bomb"))
+        {
+            Bomb bombComponent = child.GetComponent<Bomb>();
+
+            if (!bombComponent.IsDetonating)
+            {
+                bombComponent.StartCoroutine(bombComponent.DetonateBomb());
+            }
+        }
     }
 
     public void Throw(InputAction.CallbackContext context)
@@ -327,22 +337,5 @@ public class PlayerController : MonoBehaviour
         return layerNumber;
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Crate" || other.gameObject.tag == "Rock" || other.gameObject.tag == "Altar Piece" ||
-            other.gameObject.tag == "Bucket" || other.gameObject.tag == "Candle" || other.gameObject.tag == "Bomb")
-        {
-            holdable = other.gameObject;
-            //Debug.Log("Holdable = " + other.gameObject.name);
-        }
-                
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (holdable == other.gameObject)
-        {
-            holdable = null;
-        }
-    }
+    
 }

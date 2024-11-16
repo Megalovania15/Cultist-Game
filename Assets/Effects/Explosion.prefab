@@ -102,3 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DMGDealt: 50
+  explosionParticle: {fileID: 1161585149014272, guid: 1a364c82abdf7354aa8e98cb548d1930,
+    type: 3}

@@ -1360,12 +1360,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2021627094}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &113967841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076,
-    type: 3}
-  m_PrefabInstance: {fileID: 530435997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128116038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,60 +3842,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &371798257
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_Name
-      value: Levitation Particle P1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.544684
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1967582
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114351942369921954, guid: 6508960ba263d0b4681f41b53ed70076,
-        type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
 --- !u!1 &386275518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,60 +5454,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &530435997
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_Name
-      value: Levitation Particle P2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.544684
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1967582
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465895943766186, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114351942369921954, guid: 6508960ba263d0b4681f41b53ed70076,
-        type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 1091989207}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6508960ba263d0b4681f41b53ed70076, type: 3}
 --- !u!1 &532062180
 GameObject:
   m_ObjectHideFlags: 0
@@ -16342,7 +16228,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levitateParticle
       value: 
-      objectReference: {fileID: 113967841}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114426842937215860, guid: a0ba2e5684d6ab04697ca7b6cc26983b, type: 3}
     m_RemovedGameObjects: []
@@ -20733,12 +20619,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1817798304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1394438715383216, guid: 6508960ba263d0b4681f41b53ed70076,
-    type: 3}
-  m_PrefabInstance: {fileID: 371798257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1818529430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23817,7 +23697,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levitateParticle
       value: 
-      objectReference: {fileID: 1817798304}
+      objectReference: {fileID: 0}
     - target: {fileID: 114506654608505916, guid: b5726570a33f09a4cbb1540b33987a20,
         type: 3}
       propertyPath: healthBar
@@ -24353,7 +24233,5 @@ SceneRoots:
   - {fileID: 1306911330}
   - {fileID: 1745354141}
   - {fileID: 1211615453}
-  - {fileID: 371798257}
-  - {fileID: 530435997}
   - {fileID: 615365521}
   - {fileID: 810086667}

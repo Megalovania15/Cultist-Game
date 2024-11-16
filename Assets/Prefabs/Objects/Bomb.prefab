@@ -147,7 +147,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &114213263567630046
@@ -164,14 +164,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1506431060572872, guid: f8a06888313f47e42b8e2a400506891d, type: 3}
   sprites:
-  - {fileID: 21300010, guid: 11e36f089400419419124e18f40669f1, type: 3}
-  - {fileID: 21300008, guid: 11e36f089400419419124e18f40669f1, type: 3}
-  - {fileID: 21300006, guid: 11e36f089400419419124e18f40669f1, type: 3}
-  - {fileID: 21300004, guid: 11e36f089400419419124e18f40669f1, type: 3}
-  - {fileID: 21300002, guid: 11e36f089400419419124e18f40669f1, type: 3}
   - {fileID: 21300000, guid: 11e36f089400419419124e18f40669f1, type: 3}
-  explosionForce: 100
-  timeTillDetonate: 3
+  - {fileID: 21300002, guid: 11e36f089400419419124e18f40669f1, type: 3}
+  - {fileID: 21300004, guid: 11e36f089400419419124e18f40669f1, type: 3}
+  - {fileID: 21300006, guid: 11e36f089400419419124e18f40669f1, type: 3}
+  - {fileID: 21300008, guid: 11e36f089400419419124e18f40669f1, type: 3}
+  - {fileID: 21300010, guid: 11e36f089400419419124e18f40669f1, type: 3}
+  explosionForce: 60
+  <TimeTillDetonate>k__BackingField: 3
   startTimer: 0
 --- !u!114 &114422257200058590
 MonoBehaviour:
