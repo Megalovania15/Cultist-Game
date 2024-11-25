@@ -83,7 +83,7 @@ public class Altar : MonoBehaviour {
         Build();
         
         UpdateItemCount();
-        EndGame();
+        //EndGame();
 	}
 
     //updates the main progress bar that shows the progress towards completion of the alter
@@ -248,6 +248,7 @@ public class Altar : MonoBehaviour {
         UpdateProgressBar();
         buildProgressBarFill.localScale = new Vector3(0f, 1f, 1f);
         buildProgressBar.SetActive(false);
+        EndGame();
         
     }
 
@@ -266,7 +267,7 @@ public class Altar : MonoBehaviour {
         {
             playerWonBlurb.SetActive(true);
             playerWonBlurb.GetComponent<Menu>().SelectButton();
-            playerWonText.text = owner.transform.parent.name + " wins!";
+            playerWonText.text = owner.transform.name + " wins!";
             gameManager.endGame = true;
         }
     }

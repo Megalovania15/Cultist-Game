@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
 
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         Time.timeScale = 1f;
+        InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
     }
 
 	// Use this for initialization
@@ -66,16 +68,16 @@ public class GameManager : MonoBehaviour {
     {
         RevealScreen();
 
-        if (!player1StartScreen.activeInHierarchy && !player2StartScreen.activeInHierarchy)
-            GamePaused();
+        /*if (!player1StartScreen.activeInHierarchy && !player2StartScreen.activeInHierarchy)
+            GamePaused();*/
 
         ShowRespawnCountdown();
 
         if (endGame)
         {
             print("game is over");
-
             Time.timeScale = 0;
+            InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
         }
         
 
@@ -113,18 +115,29 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void GamePaused()
-    {
-        if (isPaused)
-        {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }
 
-        else if (!isPaused)
+    public void TogglePause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
+            Debug.Log("Game was paused");
+
+            if (isPaused)
+            {
+                InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+                isPaused = false;
+                
+            }
+            else
+            {
+                InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
+                isPaused = true;
+
+            }
         }
 
         /*if (Input.GetButtonDown(player1StartButton) || Input.GetButtonDown(player2StartButton))

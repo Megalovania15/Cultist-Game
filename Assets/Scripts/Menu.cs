@@ -27,6 +27,8 @@ public class Menu : MonoBehaviour {
 
     public void PlayNextLevel()
     {
+        Debug.Log("Go to next level");
+
         if (nextLevel != null)
             SceneManager.LoadScene(nextLevel);
     }
