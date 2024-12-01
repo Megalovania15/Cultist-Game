@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Crate : MonoBehaviour {
@@ -28,7 +29,7 @@ public class Crate : MonoBehaviour {
         bucketCount = altarP1.requiredBuckets + altarP2.requiredBuckets;
         candleCount = altarP1.requiredCandles + altarP2.requiredCandles;
         
-        emptyCrates = levelGen.crateCount * 0.4f;
+        //emptyCrates = levelGen.crateCount * 0.4f;
         
 
         //print("empty crates: " + emptyCrates);
@@ -42,33 +43,60 @@ public class Crate : MonoBehaviour {
 
     public void DropObject()
     {
-        RollForDrop();
-
-        if (spawner.spawnedAltarPieces < altarPieceCount && objToDrop == altarPiece)
+        if (spawner.objectsToSpawn.Count > 0)
         {
-            Instantiate(altarPiece, transform.position, Quaternion.identity);
-            spawner.spawnedAltarPieces++;
-            //print("altar pieces spawned: " + spawner.spawnedAltarPieces + "/" + altarPieceCount);
+            var spawnObjectType = spawner.objectsToSpawn.Last();
+            switch (spawnObjectType)
+            {
+                case Spawner.SpawnObjectType.None:
+                    break;
+
+                case Spawner.SpawnObjectType.AltarPiece:
+                    Instantiate(altarPiece, transform.position, Quaternion.identity);
+                    break;
+
+                case Spawner.SpawnObjectType.Bucket:
+                    Instantiate(bucket, transform.position, Quaternion.identity);
+                    break;
+
+                case Spawner.SpawnObjectType.Candle:
+                    Instantiate(candle, transform.position, Quaternion.identity);
+                    break;
+
+                case Spawner.SpawnObjectType.Bomb:
+                    Instantiate(bomb, transform.position, Quaternion.identity);
+                    break;
+            }
+            spawner.objectsToSpawn.RemoveAt(spawner.objectsToSpawn.Count - 1);
+            Debug.Log("Spawne item. Number of items left to spawn: " + spawner.objectsToSpawn.Count);
         }
+        //RollForDrop();
+
+        //if (spawner.spawnedAltarPieces < altarPieceCount && objToDrop == altarPiece)
+        //{
+        //    Instantiate(altarPiece, transform.position, Quaternion.identity);
+        //    spawner.spawnedAltarPieces++;
+        //    //print("altar pieces spawned: " + spawner.spawnedAltarPieces + "/" + altarPieceCount);
+        //}
 
 
-        else if (spawner.spawnedBuckets < bucketCount && objToDrop == bucket)
-        {
-            Instantiate(bucket, transform.position, Quaternion.identity);
-            spawner.spawnedBuckets++;
-            //print("buckets spawned: " + spawner.spawnedBuckets + "/" + bucketCount);
-        }
+        //else if (spawner.spawnedBuckets < bucketCount && objToDrop == bucket)
+        //{
+        //    Instantiate(bucket, transform.position, Quaternion.identity);
+        //    spawner.spawnedBuckets++;
+        //    //print("buckets spawned: " + spawner.spawnedBuckets + "/" + bucketCount);
+        //}
 
 
-        else if (spawner.spawnedCandles < candleCount && objToDrop == candle)
-        {
-            Instantiate(candle, transform.position, Quaternion.identity);
-            spawner.spawnedCandles++;
-            //print("candles spawned: " + spawner.spawnedCandles + "/" + candleCount);
-        }
+        //else if (spawner.spawnedCandles < candleCount && objToDrop == candle)
+        //{
+        //    Instantiate(candle, transform.position, Quaternion.identity);
+        //    spawner.spawnedCandles++;
+        //    //print("candles spawned: " + spawner.spawnedCandles + "/" + candleCount);
+        //}
 
-        else if (objToDrop == bomb)
-            Instantiate(bomb, transform.position, Quaternion.identity);
+        //else if (objToDrop == bomb)
+        //    Instantiate(bomb, transform.position, Quaternion.identity);
             
     }
 

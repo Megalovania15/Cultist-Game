@@ -5445,6 +5445,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114191903895450552, guid: ba50f0651100d9a488e05ecf58a067b7,
+        type: 3}
+      propertyPath: bombsToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114191903895450552, guid: ba50f0651100d9a488e05ecf58a067b7,
+        type: 3}
+      propertyPath: disappointmentsToSpawn
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

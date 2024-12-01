@@ -29,16 +29,22 @@ public class LevelGeneration : MonoBehaviour {
         foreach (GameObject altar in GameObject.FindGameObjectsWithTag("Altar"))
             levelObjs.Add(altar);
 
+        
+
         /*if (spawnPositions.Length != 0)
             PlacePlayers();*/
 
-        SpawnObjs();
+        
     }
 
     // Use this for initialization
     void Start()
     {
+        Spawner spawner = FindObjectOfType<Spawner>();
 
+        crateCount = spawner.objectsToSpawn.Count;
+
+        SpawnObjs();
     }
 
     // Update is called once per frame
