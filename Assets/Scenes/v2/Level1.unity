@@ -11293,7 +11293,7 @@ PrefabInstance:
     - target: {fileID: 5241193624117461636, guid: 50472300b10594b4984eb69f65cd76e2,
         type: 3}
       propertyPath: requirements.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5241193624117461636, guid: 50472300b10594b4984eb69f65cd76e2,
         type: 3}
@@ -11303,8 +11303,19 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5241193624117461636, guid: 50472300b10594b4984eb69f65cd76e2,
         type: 3}
+      propertyPath: requirements.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 38a8529584d216e4fa164e64ad72c253,
+        type: 2}
+    - target: {fileID: 5241193624117461636, guid: 50472300b10594b4984eb69f65cd76e2,
+        type: 3}
       propertyPath: requirements.Array.data[0].count
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241193624117461636, guid: 50472300b10594b4984eb69f65cd76e2,
+        type: 3}
+      propertyPath: requirements.Array.data[1].count
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15478,7 +15489,7 @@ PrefabInstance:
     - target: {fileID: -2836918289703304333, guid: e6c4249aceb7f014ba8b7a1dbba22d8e,
         type: 3}
       propertyPath: requirements.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2836918289703304333, guid: e6c4249aceb7f014ba8b7a1dbba22d8e,
         type: 3}
@@ -15488,8 +15499,19 @@ PrefabInstance:
         type: 2}
     - target: {fileID: -2836918289703304333, guid: e6c4249aceb7f014ba8b7a1dbba22d8e,
         type: 3}
+      propertyPath: requirements.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 38a8529584d216e4fa164e64ad72c253,
+        type: 2}
+    - target: {fileID: -2836918289703304333, guid: e6c4249aceb7f014ba8b7a1dbba22d8e,
+        type: 3}
       propertyPath: requirements.Array.data[0].count
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2836918289703304333, guid: e6c4249aceb7f014ba8b7a1dbba22d8e,
+        type: 3}
+      propertyPath: requirements.Array.data[1].count
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1113352140931162, guid: e6c4249aceb7f014ba8b7a1dbba22d8e, type: 3}
       propertyPath: m_Name
@@ -17082,7 +17104,7 @@ MonoBehaviour:
   levelBounds3: {fileID: 0}
   levelBounds4: {fileID: 0}
   crate: {fileID: 1037173604638946, guid: d6c1ae45109d2ae4fa0eb7b6cb549175, type: 3}
-  rock: {fileID: 1033639603675786, guid: 04f83f54b5e702e499d7b5bfdab47632, type: 3}
+  rock: {fileID: 1033639603675786, guid: f16ce97cd3f34dc48b600d411390f35e, type: 3}
   walls:
   - {fileID: 1514285307710084, guid: b9af22cdf02dd8e4f92acde7181725c2, type: 3}
   - {fileID: 1520448832075134, guid: 958e3c430e41b754294506e8d4719d17, type: 3}
