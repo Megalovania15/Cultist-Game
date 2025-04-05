@@ -5,8 +5,11 @@ using UnityEngine;
 
 namespace V2
 {
+    // Main script controlling item spawning in a level. Spawns are configured
+    // in the editor.
     public class Spawner : MonoBehaviour
     {
+        // Defines how many of an item to spawn.
         [Serializable]
         public struct Spawn
         {
@@ -14,9 +17,14 @@ namespace V2
             public int count;
         }
 
+        // Item instances which may be spawned into the level.
         [SerializeField]
         private Spawn[] spawns;
 
+        // Working set of prefabs to instantiate into the scene. The number of
+        // elements here will be the sum of Spawn.count in spawns, as the
+        // config is flattened. The list is shuffled to produce a random
+        // distribution of items.
         private List<GameObject> spawnPrefabs = new List<GameObject>();
 
         public int SpawnPrefabCount
@@ -24,6 +32,8 @@ namespace V2
             get { return spawnPrefabs.Count; }
         }
 
+        // Shuffles all items configured in the editor to be spawnable and
+        // all items required by all Altars.
         private void Start()
         {
             foreach (var spawn in spawns)
@@ -42,6 +52,7 @@ namespace V2
             new KnuthShuffler().Shuffle(spawnPrefabs);
         }
 
+        // Gets the next random item to spawn.
         public GameObject GetNextSpawnPrefab()
         {
             if (spawnPrefabs.Count == 0) return null;
