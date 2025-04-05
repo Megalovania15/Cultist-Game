@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace V2
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class MoveableObj : MonoBehaviour
     {
 
@@ -17,8 +18,7 @@ namespace V2
 
         private SoundManager soundManager;
 
-        // Use this for initialization
-        void Start()
+        void Awake()
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
             soundManager = FindObjectOfType<SoundManager>();
