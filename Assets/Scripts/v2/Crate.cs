@@ -12,13 +12,17 @@ namespace V2
         private void Start()
         {
             spawner = FindObjectOfType<Spawner>();
+            if (spawner is null)
+            {
+                Debug.LogError("No Spawner in scene so this crate will not spawn objects. Please add it to the scene.");
+            }
         }
 
         // Drops an object at the current position, if the spawner allows it,
         // else is empty.
         public void DropObject()
         {
-            if (spawner.SpawnPrefabCount > 0)
+            if (spawner is not null && spawner.SpawnPrefabCount > 0)
             {
                 Instantiate(spawner.GetNextSpawnPrefab(), transform.position, Quaternion.identity);
             }
