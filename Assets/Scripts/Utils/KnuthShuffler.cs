@@ -23,7 +23,7 @@ public class KnuthShuffler
     {
         if (list is null)
         {
-            throw new ArgumentNullException("List is null.");
+            throw new ArgumentNullException(nameof(list));
         }
         var clone = new List<T>(list);
         KnuthShuffle(clone);
@@ -35,7 +35,7 @@ public class KnuthShuffler
     {
         if (list is null)
         {
-            throw new ArgumentNullException("List is null.");
+            throw new ArgumentNullException(nameof(list));
         }
         KnuthShuffle(list);
     }

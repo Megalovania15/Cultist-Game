@@ -25,12 +25,9 @@ namespace V2
         // elements here will be the sum of Spawn.count in spawns, as the
         // config is flattened. The list is shuffled to produce a random
         // distribution of items.
-        private List<GameObject> spawnPrefabs = new List<GameObject>();
+        private List<GameObject> spawnPrefabs = new();
 
-        public int SpawnPrefabCount
-        {
-            get { return spawnPrefabs.Count; }
-        }
+        public int SpawnPrefabCount => spawnPrefabs.Count;
 
         // Shuffles all items configured in the editor to be spawnable and
         // all items required by all Altars.
