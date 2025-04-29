@@ -36,7 +36,8 @@ namespace V2
         // complete the Altar.
         public bool Requires(string itemId)
         {
-            return requirements.Any(requirement => requirement.count > 0);
+            return requirements.Any(requirement => requirement.item.id == itemId
+                                                   && requirement.count > 0);
         }
 
         // Tries to add an item to the Altar. Returns true if the item is
