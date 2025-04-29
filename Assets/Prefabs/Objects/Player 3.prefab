@@ -58,6 +58,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300010, guid: 3df5e2f4ab4ecce469350fa96b7db43f,
         type: 3}
+    - target: {fileID: 4019602661449139862, guid: b5726570a33f09a4cbb1540b33987a20,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d799aa3e0f7537040b77307bd46eb198, type: 2}
     - target: {fileID: 5801590276114179816, guid: b5726570a33f09a4cbb1540b33987a20,
         type: 3}
       propertyPath: sprites.Array.data[0]
@@ -106,6 +111,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300016, guid: 3df5e2f4ab4ecce469350fa96b7db43f,
         type: 3}
+    - target: {fileID: 5801590276114179816, guid: b5726570a33f09a4cbb1540b33987a20,
+        type: 3}
+      propertyPath: <playerNum>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
